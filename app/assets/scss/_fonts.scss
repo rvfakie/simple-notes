@@ -1,0 +1,99 @@
+/* stylelint-disable nesting-selector-no-missing-scoping-root */
+@use 'mixins' as *;
+
+@mixin typo-sans-serif {
+
+  & {
+    font-family: "Inter", sans-serif;
+  }
+}
+
+// Text styles
+@mixin text-h1 {
+
+  & {
+    @include text-32;
+
+    @include mobile {
+      @include text-24;
+    }
+  }
+}
+
+@mixin text-32 {
+
+  & {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+@mixin text-24 {
+
+  & {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@mixin text-20 {
+
+  & {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+@mixin text-18 {
+
+  & {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@mixin text-16 {
+
+  & {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@mixin text-16-18 {
+
+  & {
+    @include text-16;
+
+    @include mobile {
+      @include text-18;
+    }
+  }
+}
+
+@mixin text-14 {
+
+  & {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@mixin text-12 {
+
+  & {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@mixin text-12-14 {
+
+  & {
+    @include text-12;
+
+    @include mobile {
+      @include text-14;
+    }
+  }
+}

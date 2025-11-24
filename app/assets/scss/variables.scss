@@ -1,0 +1,42 @@
+:root {
+  --colors-white: #ffffff;
+  --colors-black: #000000;
+  
+  --colors-primary: #ffffff;
+  --colors-primary-text: #3c3c3c;
+  --colors-primary-hover: #f0f0f0;
+  --colors-primary-press: #eae9e9;
+  --colors-primary-low-contrast: #5c6370;
+  --colors-primary-border: #dbdbdb;
+  --colors-primary-border-light: #f5f3f1;
+  
+  --colors-secondary: #f5f3f1;
+  --colors-secondary-dark: #eae5e0;
+  
+  --colors-disabled-text: #948e87;
+  --colors-disabled-border: #f5f3f1;
+
+  --colors-error-border: #d02727;
+  --colors-error-background: #ffebeb;
+
+  --colors-green-light: #cdf9cc;
+  --colors-green: #84e181;
+  --colors-green-medium: #319776;
+  --colors-green-dark: #003826;
+  --colors-green-hover: #b0efae;
+  --colors-green-press: #93e690;
+
+  --colors-red-light: #fbd2cf;
+  --colors-red: #f58b82;
+  --colors-red-dark: #4a0000;
+  --colors-red-hover: #f7b0a9;
+  --colors-red-press: #f1928a;
+
+  --colors-input-background: #ffffff;
+  --colors-input-border-active: #3c3c3c;
+
+  --colors-link: #3451b2;
+
+  --transition-short: .128s;
+  --transition-long: .3s;
+}

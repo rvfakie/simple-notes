@@ -1,0 +1,38 @@
+/* stylelint-disable nesting-selector-no-missing-scoping-root */
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin hoverable {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin ui-default-hover {
+  @include hoverable {
+    transition: opacity var(--transition-short) linear;
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+}
+
+@mixin ui-link {
+  color: var(--colors-link);
+  text-decoration: underline;
+
+  @include ui-default-hover;
+}
+
+@mixin ui-flex-vertical {
+
+  & {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+}
