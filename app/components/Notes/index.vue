@@ -67,6 +67,7 @@
 </template>
 
 <script setup lang="ts">
+import { v4 as uuidV4 } from 'uuid';
 import { useNotesStore } from '~/stores/notesStore';
 
 const notesStore = useNotesStore();
@@ -75,7 +76,7 @@ const router = useRouter();
 const notes = ref(JSON.parse(JSON.stringify(notesStore.notes)));
 
 const onAddNote = () => {
-  const id = crypto.randomUUID();
+  const id = uuidV4();
 
   notesStore.add({
     id,

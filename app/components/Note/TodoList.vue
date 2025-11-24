@@ -77,6 +77,7 @@
 </template>
 
 <script setup lang="ts">
+import { v4 as uuidV4 } from 'uuid';
 import type { EditableNote, EditableTodo } from '~/network/codecs';
 import { useHistoryStore } from '~/stores/historyStore';
 
@@ -134,7 +135,7 @@ const onAddTodo = () => {
     const label = 'New todo';
 
     const newTodo = {
-      id: crypto.randomUUID(),
+      id: uuidV4(),
       label,
       value: false,
       edit: false,

@@ -1,57 +1,59 @@
+import { v4 as uuidV4 } from 'uuid';
+
 export const notes = [
   {
-    id: crypto.randomUUID(),
+    id: uuidV4(),
     name: 'Do house stuff',
     todos: [
       {
-        id: crypto.randomUUID(),
+        id: uuidV4(),
         label: 'Clean the kitchen',
         value: true,
       },
       {
-        id: crypto.randomUUID(),
+        id: uuidV4(),
         label: 'Dump the garbage',
         value: false,
       },
       {
-        id: crypto.randomUUID(),
+        id: uuidV4(),
         label: 'Feed the dog',
         value: false,
       },
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: uuidV4(),
     name: 'Pay taxes',
     todos: [
       {
-        id: crypto.randomUUID(),
+        id: uuidV4(),
         label: 'Pay for electricity',
         value: false,
       },
       {
-        id: crypto.randomUUID(),
+        id: uuidV4(),
         label: 'Pay the NDFL',
         value: false,
       },
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: uuidV4(),
     name: 'Buy groceries',
     todos: [
       {
-        id: crypto.randomUUID(),
+        id: uuidV4(),
         label: 'Sugar',
         value: false,
       },
       {
-        id: crypto.randomUUID(),
+        id: uuidV4(),
         label: 'Pasta',
         value: true,
       },
       {
-        id: crypto.randomUUID(),
+        id: uuidV4(),
         label: 'Meat',
         value: true,
       },
