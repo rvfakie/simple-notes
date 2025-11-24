@@ -17,11 +17,37 @@
         <NoteFooter
           v-model:mutatedNote="mutatedNote"
           v-model:note="note"
-          :noteId="(route.params.id as string)"
+          @remove-note="isRemoveNoteModalOpen = true"
         />
       </div>
     </Box>
   </div>
+
+  <UIModal
+    :show="isRemoveNoteModalOpen"
+    @close="isRemoveNoteModalOpen = false"
+  >
+    <template #modal-heading>
+      Remove note?
+    </template>
+
+    <p class="text">
+      This action <b>cannot be undone</b>
+    </p>
+
+    <template #modal-footer>
+      <UIButton
+        color="green"
+        @click="onRemoveNoteConfirm"
+      >
+        Remove
+      </UIButton>
+
+      <UIButton @click="isRemoveNoteModalOpen = false">
+        Cancel
+      </UIButton>
+    </template>
+  </UIModal>
 </template>
 
 <script setup lang="ts">
@@ -30,6 +56,7 @@ import { useNotesStore } from '~/stores/notesStore';
 
 const notesStore = useNotesStore();
 
+const router = useRouter();
 const route = useRoute();
 
 const note = notesStore.getNote(route.params.id as string);
@@ -45,6 +72,16 @@ const mutatedNote = ref({
     newLabel: todo.label,
   })) || [],
 });
+
+const isRemoveNoteModalOpen = ref(false);
+
+const onRemoveNoteConfirm = () => {
+  notesStore.remove(route.params.id as string);
+
+  isRemoveNoteModalOpen.value = false;
+
+  router.replace('/');
+};
 </script>
 
 <style lang="scss" scoped>

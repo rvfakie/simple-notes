@@ -22,8 +22,8 @@ import type { EditableTodo, EditableNote, Note } from '~/network/codecs';
 import { useHistoryStore } from '~/stores/historyStore';
 import { useNotesStore } from '~/stores/notesStore';
 
-const props = defineProps<{
-  noteId: string;
+const emit = defineEmits<{
+  removeNote: []
 }>();
 
 const mutatedNote = defineModel<EditableNote>('mutatedNote');
@@ -49,9 +49,7 @@ const onSaveNote = () => {
 };
 
 const onRemoveNote = () => {
-  notesStore.remove(props.noteId);
-
-  router.push('/');
+  emit('removeNote');
 };
 
 const isEditingActive = computed(() =>
